@@ -10,8 +10,8 @@ function App() {
   const [pass, setPass] = useState<string>('')
   
   useEffect(()=>{
-    const inputPassword = prompt('Senha')
-    setPass(inputPassword as string)
+    // const inputPassword = prompt('Senha')
+    // setPass(inputPassword as string)
   },[])
   
   return (

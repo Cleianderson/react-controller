@@ -11,6 +11,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
+    "electron-is-dev": "^1.2.0",
     "moment": "^2.26.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron public/electron.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +45,9 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.5",
-    "@types/styled-components": "^5.1.0"
+    "@types/styled-components": "^5.1.0",
+    "concurrently": "^5.2.0",
+    "electron": "^9.0.0",
+    "wait-on": "^5.0.0"
   }
 }
