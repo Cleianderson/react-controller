@@ -37,7 +37,7 @@ function Suggestions() {
   const handleRemove = async (id: string) => {
     const res = await api.delete("/suggestions", {
       params: { pass, id },
-      validateStatus: () => false,
+      validateStatus: () => true,
     });
     if (res.status === 200) {
       const _suggestions = suggestions?.filter((item) => item._id !== id);

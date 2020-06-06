@@ -1,1 +1,1 @@
-/// <reference types="nw-react-scripts" />
+/// <reference types="react-scripts" />

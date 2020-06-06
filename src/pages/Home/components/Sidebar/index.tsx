@@ -6,14 +6,18 @@ import { Container, Button } from "./styles";
 function Sidebar() {
   return (
     <Container>
-      <Button>Semana</Button>
+      <Link to="/weeks">
+        <Button>Semanas</Button>
+      </Link>
       <Link to="/warns">
         <Button>Avisos</Button>
       </Link>
       <Link to="/suggestions">
         <Button>Sugestões</Button>
       </Link>
-      <Button>Respostas</Button>
+      <Link to="/answers">
+        <Button>Respostas</Button>
+      </Link>
     </Container>
   );
 }
