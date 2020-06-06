@@ -5,10 +5,13 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: calc(100vh - 50px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  padding: 0px 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  height: calc(100vh - 70px);
   overflow: auto;
 `
 

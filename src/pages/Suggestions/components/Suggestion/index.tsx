@@ -21,17 +21,16 @@ const Suggestion: React.FC<{
   mark: (id: string) => void;
 }> = ({ item, remove, mark }) => {
   return (
-    <Container>
-      <Content viewed={item.viewed}>
+    <Container viewed={item.viewed}>
+      <Content>
         <Header>
           <Title>
             <Author>{item.author}</Author>
             <Info>
-              <Type>{item.type}</Type>
               <TDate>
                 {item.createdAt
                   ? moment(item.createdAt).format("DD/MM/yy")
-                  : ""}
+                  : "sem data"}
               </TDate>
             </Info>
           </Title>
