@@ -26,7 +26,7 @@ const Weeks: React.FC = () => {
       <SubHeader />
       <Content>
         {weeks?.map((w) => (
-          <Week key={w.number_week} onClick={() => setViewWeek(w)}>Semana {w.number_week}</Week>
+          <Week key={w.number_week} onClick={() => setViewWeek(w)}>{w.year}, semana {w.number_week}</Week>
         ))}
       </Content>
       <BtnInsert onClick={() => setInserting(true)}>

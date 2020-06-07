@@ -8,7 +8,6 @@ export const Container = styled.div`
 `
 
 export const Table = styled.table`
-  border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 5px;
   width: 100%;

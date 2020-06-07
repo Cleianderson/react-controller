@@ -18,26 +18,6 @@ export const Content = styled.div`
   padding: 10px 15px;
 `;
 
-export const Table = styled.table`
-  border-collapse: collapse;
-  width: 90vw;
-`;
-export const Thead = styled.thead``;
-export const Tbody = styled.tbody``;
-export const Tr = styled.tr`
-  border-top: 1px;
-  font-size: 14px;
-  text-align: center;
-  height: 40px;
-  * {
-    padding: 5px;
-  }
-  &:nth-child(even) {
-    background: #1b2d4f22;
-  }
-`;
-export const Td = styled.td``;
-export const Th = styled.th``;
 export const Close = styled.button`
   position: absolute;
   top: 0;
@@ -49,14 +29,4 @@ export const Close = styled.button`
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   cursor: pointer;
-`;
-
-export const Title = styled.span`
-  text-align: center;
-  color: #1b2d4f;
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 18px;
-  border: 0px solid #1b2d4f;
-  border-bottom-width: 1px;
 `;

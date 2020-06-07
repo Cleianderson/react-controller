@@ -3,15 +3,10 @@ import React from "react";
 import {
   Container,
   Content,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
   Close,
-  Title,
 } from "./styles";
+
+import Table from '../../../../components/Table'
 
 const KEYS_VALUES: { [key: string]: string } = {
   p1: "Prato Prin. 1",
@@ -34,52 +29,8 @@ const View: React.FC<{ week: TWeek; onClose: () => void }> = ({
   return (
     <Container>
       <Content>
-        <Title>Almoço</Title>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th>Item</Th>
-              <Th>Segunda</Th>
-              <Th>Terça</Th>
-              <Th>Quarta</Th>
-              <Th>Quinta</Th>
-              <Th>Sexta</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {Object.keys(KEYS_VALUES).map((val) => (
-              <Tr>
-                <Td>{KEYS_VALUES[val]}</Td>
-                {week.data.map((dayWeek) => (
-                  <Td>{dayWeek.almoco[val]}</Td>
-                ))}
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-        <Title>Jantar</Title>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th>Item</Th>
-              <Th>Segunda</Th>
-              <Th>Terça</Th>
-              <Th>Quarta</Th>
-              <Th>Quinta</Th>
-              <Th>Sexta</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {Object.keys(KEYS_VALUES).map((val) => (
-              <Tr>
-                <Td>{KEYS_VALUES[val]}</Td>
-                {week.data.map((dayWeek) => (
-                  <Td>{dayWeek.jantar[val]}</Td>
-                ))}
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
+        <Table type="almoco" week={week.data} label="Almoço" />
+        <Table type="jantar" week={week.data} label="Jantar" />
       </Content>
       <Close onClick={onClose}>fechar</Close>
     </Container>

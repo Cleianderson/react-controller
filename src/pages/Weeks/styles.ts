@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: grid;
   grid-template-rows: 100px 100px;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
 `;
 
@@ -22,16 +22,17 @@ export const Week = styled.button`
   margin: 10px;
   font-size: 18px;
   color: #1b2d4f;
-  font-weight: bold;
-  background: linear-gradient(#eee, #1b2d4f11);
+  background: #eee;
+  box-shadow: 0 3px 5px 0 #00000022;
   transition: box-shadow .4s;
-  
-  &:hover {
-    box-shadow: 0 3px 5px  0 #00000066;
+
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0 5px 10px 0 #00000022;
   }
 `;
 
-export const Modal = styled.div<{visible:boolean}>`
+export const Modal = styled.div<{ visible: boolean }>`
   transition: display 1s;
   display: ${({ visible }) => (visible ? "flex" : "none")};
   justify-content: center;
@@ -58,9 +59,9 @@ export const BtnInsert = styled.button`
   align-items: center;
   padding: 5px 15px;
   cursor: pointer;
-  transition: color .4s;
+  transition: color 0.4s;
 
-  &:hover{
+  &:hover {
     color: #f9b233;
   }
-`
+`;
