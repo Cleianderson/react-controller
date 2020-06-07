@@ -64,7 +64,8 @@ export const Button = styled.button`
     align-self: center;
     padding: 5px 10px;
     margin: 5px;
-    cursor: pointer;
+    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+    opacity: ${props => props.disabled ? '.3' : '1'};
 `;
 
 export const Relevation = styled(Question)`
@@ -72,3 +73,8 @@ export const Relevation = styled(Question)`
   text-align: center;
   padding-right: 0px;
 `;
+
+export const ContainerButtons = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`

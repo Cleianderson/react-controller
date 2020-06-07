@@ -12,6 +12,7 @@ import {
   SubHeader,
   Label,
   Button,
+  ContainerButtons,
 } from "./styles";
 
 import api from "../../../../service/api";
@@ -107,16 +108,16 @@ const Answer: React.FC<{ item: TAnswers }> = ({ item }) => {
           value={answer}
           onChange={(event) => setAnswer(event.target.value)}
         />
-        {edited && (
-          <Button onClick={handleUpdateAnswer}>
+        <ContainerButtons>
+          <Button disabled={!edited} onClick={handleUpdateAnswer}>
             <MdSave color="#1b2d4f" size={20} />
             Salvar
           </Button>
-        )}
-        <Button onClick={handleDeleteAnswer} style={{color: '#a00'}} >
-          <MdDeleteForever color="#a00" size={20} />
-          Remover
-        </Button>
+          <Button onClick={handleDeleteAnswer} style={{ color: "#a00" }}>
+            <MdDeleteForever color="#a00" size={20} />
+            Remover
+          </Button>
+        </ContainerButtons>
       </Content>
     </Container>
   );

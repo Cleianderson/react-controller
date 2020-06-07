@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { MdAdd } from "react-icons/md";
 
 import SubHeader from "../../components/SubHeader";
@@ -11,6 +11,7 @@ import {
   Modal,
   EmptyText,
   EmptyContainer,
+  AnswerContainer,
 } from "./styles";
 import CreateAnswer from "./components/CreateAnswer";
 import Answer from "./components/Answer";
@@ -27,22 +28,28 @@ function Answers() {
     loadAnswers();
   }, []);
 
+  const renderContent = useCallback(() => {
+    if (answers.length) {
+      return answers.map((item, index) => (
+        <AnswerContainer>
+          <Answer key={String(item._id + index)} item={item} />
+        </AnswerContainer>
+      ));
+    } else {
+      return (
+        <EmptyContainer>
+          <EmptyText>respostas não encontradas</EmptyText>
+        </EmptyContainer>
+      );
+    }
+  }, [answers]);
+
   return (
     <Container>
       <SubHeader />
-      <Content>
-        {answers.length > 0 ? (
-          answers.map((item, index) => (
-            <Answer key={String(item._id + index)} item={item} />
-          ))
-        ) : (
-          <EmptyContainer>
-            <EmptyText>Não há nada para mostrar</EmptyText>
-          </EmptyContainer>
-        )}
-      </Content>
+      <Content>{renderContent()}</Content>
       <AnswerButton onClick={() => setModalVisible(true)}>
-        <MdAdd size={25} color='#fff' />
+        <MdAdd size={25} color="#fff" />
         criar resposta
       </AnswerButton>
       <Modal visible={modalVisible}>
